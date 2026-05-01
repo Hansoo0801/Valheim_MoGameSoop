@@ -1,0 +1,46 @@
+<style>
+.page {
+  position: relative;
+  width: 1280px;
+  margin: 40px auto;
+}
+
+.page img {
+  width: 1280px;
+}
+
+.copy-btn {
+  position: absolute;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+</style>
+
+<!-- page5 (코드복사) -->
+<div class="page">
+  <img src="page5.jpg">
+  <button class="copy-btn"
+    style="left:720px; top:480px; width:220px; height:80px;"
+    onclick="copyCode()">
+  </button>
+</div>
+
+<!-- page11 (IP복사) -->
+<div class="page">
+  <img src="page11.jpg">
+  <button class="copy-btn"
+    style="left:390px; top:280px; width:200px; height:70px;"
+    onclick="copyIP()">
+  </button>
+</div>
+
+<script>
+function copyCode() {
+  navigator.clipboard.writeText("019de11e-7a50-00a6-91e8-5e6e28070d20");
+}
+
+function copyIP() {
+  navigator.clipboard.writeText("38.96.30.82:27030");
+}
+</script>
