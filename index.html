@@ -28,34 +28,38 @@ body {
   cursor: pointer;
 }
 
-/* 🔥 토스트 UI */
+/* 💖 업그레이드 토스트 UI */
 #toast {
   position: fixed;
-  bottom: 40px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.85);
-  color: #fff;
-  padding: 12px 22px;
-  border-radius: 10px;
-  font-size: 14px;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(120,120,120,0.85);
+  color: white;
+  padding: 30px 60px;
+  border-radius: 20px;
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
   pointer-events: none;
+
+  /* ✨ 귀여운 느낌 */
+  font-family: "Segoe UI Rounded", "Arial Rounded MT Bold", sans-serif;
 }
 
 #toast.show {
   opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
 }
 </style>
 </head>
 
 <body>
 
-<!-- page1 -->
 <div class="page"><img src="page1.jpg"></div>
 
-<!-- page2 (링크) -->
 <div class="page">
   <img src="page2.jpg">
   <a href="https://thunderstore.io/package/ebkr/r2modman/"
@@ -64,13 +68,9 @@ body {
   </a>
 </div>
 
-<!-- page3 -->
 <div class="page"><img src="page3.jpg"></div>
-
-<!-- page4 -->
 <div class="page"><img src="page4.jpg"></div>
 
-<!-- page5 (코드복사) -->
 <div class="page">
   <img src="page5.jpg">
   <button class="copy-btn"
@@ -79,22 +79,12 @@ body {
   </button>
 </div>
 
-<!-- page6 -->
 <div class="page"><img src="page6.jpg"></div>
-
-<!-- page7 -->
 <div class="page"><img src="page7.jpg"></div>
-
-<!-- page8 -->
 <div class="page"><img src="page8.jpg"></div>
-
-<!-- page9 -->
 <div class="page"><img src="page9.jpg"></div>
-
-<!-- page10 -->
 <div class="page"><img src="page10.jpg"></div>
 
-<!-- page11 (IP복사) -->
 <div class="page">
   <img src="page11.jpg">
   <button class="copy-btn"
@@ -103,7 +93,7 @@ body {
   </button>
 </div>
 
-<!-- 토스트 -->
+<!-- 💖 토스트 -->
 <div id="toast">Copy</div>
 
 <script>
