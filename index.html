@@ -1,4 +1,16 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>발헤임 서버 가이드</title>
+
 <style>
+body {
+  margin: 0;
+  background: #111;
+  text-align: center;
+}
+
 .page {
   position: relative;
   width: 1280px;
@@ -9,6 +21,7 @@
   width: 1280px;
 }
 
+/* 투명 버튼 */
 .copy-btn {
   position: absolute;
   background: transparent;
@@ -16,21 +29,35 @@
   cursor: pointer;
 }
 </style>
+</head>
+
+<body>
+
+<div class="page"><img src="page1.jpg"></div>
+<div class="page"><img src="page2.jpg"></div>
+<div class="page"><img src="page3.jpg"></div>
+<div class="page"><img src="page4.jpg"></div>
 
 <!-- page5 (코드복사) -->
 <div class="page">
   <img src="page5.jpg">
   <button class="copy-btn"
-    style="left:720px; top:480px; width:220px; height:80px;"
+    style="left:720px; top:470px; width:240px; height:90px;"
     onclick="copyCode()">
   </button>
 </div>
+
+<div class="page"><img src="page6.jpg"></div>
+<div class="page"><img src="page7.jpg"></div>
+<div class="page"><img src="page8.jpg"></div>
+<div class="page"><img src="page9.jpg"></div>
+<div class="page"><img src="page10.jpg"></div>
 
 <!-- page11 (IP복사) -->
 <div class="page">
   <img src="page11.jpg">
   <button class="copy-btn"
-    style="left:390px; top:280px; width:200px; height:70px;"
+    style="left:370px; top:280px; width:220px; height:80px;"
     onclick="copyIP()">
   </button>
 </div>
@@ -38,9 +65,14 @@
 <script>
 function copyCode() {
   navigator.clipboard.writeText("019de11e-7a50-00a6-91e8-5e6e28070d20");
+  alert("코드 복사됨");
 }
 
 function copyIP() {
   navigator.clipboard.writeText("38.96.30.82:27030");
+  alert("IP 복사됨");
 }
 </script>
+
+</body>
+</html>
