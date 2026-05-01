@@ -21,20 +21,41 @@ body {
   width: 1280px;
 }
 
-/* 🔴 디버그 모드 ON */
 .copy-btn {
   position: absolute;
-  background: rgba(255,0,0,0.3);
-  border: 2px solid red;
+  background: transparent;
+  border: none;
   cursor: pointer;
+}
+
+/* 🔥 토스트 UI */
+#toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.85);
+  color: #fff;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+#toast.show {
+  opacity: 1;
 }
 </style>
 </head>
 
 <body>
 
+<!-- page1 -->
 <div class="page"><img src="page1.jpg"></div>
 
+<!-- page2 (링크) -->
 <div class="page">
   <img src="page2.jpg">
   <a href="https://thunderstore.io/package/ebkr/r2modman/"
@@ -43,40 +64,66 @@ body {
   </a>
 </div>
 
+<!-- page3 -->
 <div class="page"><img src="page3.jpg"></div>
+
+<!-- page4 -->
 <div class="page"><img src="page4.jpg"></div>
 
+<!-- page5 (코드복사) -->
 <div class="page">
   <img src="page5.jpg">
   <button class="copy-btn"
-    style="left:730px; top:345px; width:130px; height:24px;"
+    style="left:885px; top:545px; width:170px; height:40px;"
     onclick="copyCode()">
   </button>
 </div>
 
+<!-- page6 -->
 <div class="page"><img src="page6.jpg"></div>
+
+<!-- page7 -->
 <div class="page"><img src="page7.jpg"></div>
+
+<!-- page8 -->
 <div class="page"><img src="page8.jpg"></div>
+
+<!-- page9 -->
 <div class="page"><img src="page9.jpg"></div>
+
+<!-- page10 -->
 <div class="page"><img src="page10.jpg"></div>
 
+<!-- page11 (IP복사) -->
 <div class="page">
   <img src="page11.jpg">
   <button class="copy-btn"
-    style="left:400px; top:80px; width:110px; height:23px;"
+    style="left:480px; top:120px; width:150px; height:40px;"
     onclick="copyIP()">
   </button>
 </div>
 
+<!-- 토스트 -->
+<div id="toast">Copy</div>
+
 <script>
+function showToast() {
+  const toast = document.getElementById("toast");
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2000);
+}
+
 function copyCode() {
   navigator.clipboard.writeText("019de11e-7a50-00a6-91e8-5e6e28070d20");
-  alert("코드 복사됨");
+  showToast();
 }
 
 function copyIP() {
   navigator.clipboard.writeText("38.96.30.82:27030");
-  alert("IP 복사됨");
+  showToast();
 }
 </script>
 
