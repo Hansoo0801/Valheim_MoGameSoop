@@ -21,10 +21,11 @@ body {
   width: 1280px;
 }
 
+/* 🔴 디버그 모드 ON */
 .copy-btn {
   position: absolute;
-  background: transparent;
-  border: none;
+  background: rgba(255,0,0,0.3);
+  border: 2px solid red;
   cursor: pointer;
 }
 </style>
@@ -32,33 +33,19 @@ body {
 
 <body>
 
-<!-- page1 -->
 <div class="page"><img src="page1.jpg"></div>
 
-<!-- page2 (링크 클릭 영역) -->
 <div class="page">
   <img src="page2.jpg">
-
   <a href="https://thunderstore.io/package/ebkr/r2modman/"
      target="_blank"
-     style="
-       position:absolute;
-       left:120px;
-       top:236px;
-       width:1025px;
-       height:40px;
-       display:block;
-     ">
+     style="position:absolute; left:120px; top:236px; width:1025px; height:40px;">
   </a>
 </div>
 
-<!-- page3 -->
 <div class="page"><img src="page3.jpg"></div>
-
-<!-- page4 -->
 <div class="page"><img src="page4.jpg"></div>
 
-<!-- page5 (코드복사) -->
 <div class="page">
   <img src="page5.jpg">
   <button class="copy-btn"
@@ -67,22 +54,12 @@ body {
   </button>
 </div>
 
-<!-- page6 -->
 <div class="page"><img src="page6.jpg"></div>
-
-<!-- page7 -->
 <div class="page"><img src="page7.jpg"></div>
-
-<!-- page8 -->
 <div class="page"><img src="page8.jpg"></div>
-
-<!-- page9 -->
 <div class="page"><img src="page9.jpg"></div>
-
-<!-- page10 -->
 <div class="page"><img src="page10.jpg"></div>
 
-<!-- page11 (IP복사) -->
 <div class="page">
   <img src="page11.jpg">
   <button class="copy-btn"
