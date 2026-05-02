@@ -28,25 +28,25 @@ body {
   cursor: pointer;
 }
 
-/* 💖 업그레이드 토스트 UI */
+/* 💖 토스트 UI */
 #toast {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) scale(0.8);
-  background: rgba(120,120,120,0.85);
+  transform: translate(-50%, -50%) scale(0.7);
+  background: rgba(90, 90, 90, 0.9);
   color: white;
-  padding: 30px 60px;
-  border-radius: 20px;
-  font-size: 32px;
-  font-weight: 600;
+  padding: 40px 80px;
+  border-radius: 30px;
+  font-size: 36px;
+  font-weight: 700;
   letter-spacing: 1px;
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
   pointer-events: none;
-
-  /* ✨ 귀여운 느낌 */
   font-family: "Segoe UI Rounded", "Arial Rounded MT Bold", sans-serif;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+  backdrop-filter: blur(6px);
 }
 
 #toast.show {
@@ -62,8 +62,11 @@ body {
 
 <div class="page">
   <img src="page2.jpg">
-  <a href="https://thunderstore.io/package/ebkr/r2modman/"
+  <!-- ✅ 다운로드 버튼 (토스트 없음, 새창 열기) -->
+  <a href="https://drive.google.com/file/d/1d8KQCgLH_8X2sihkabHbK7jtqfc0ZBw7/view?usp=sharing"
      target="_blank"
+     rel="noopener noreferrer"
+     class="copy-btn"
      style="position:absolute; left:120px; top:236px; width:1025px; height:40px;">
   </a>
 </div>
@@ -73,6 +76,7 @@ body {
 
 <div class="page">
   <img src="page5.jpg">
+  <!-- ✅ 코드 복사 (토스트 유지) -->
   <button class="copy-btn"
     style="left:885px; top:545px; width:170px; height:40px;"
     onclick="copyCode()">
@@ -87,6 +91,7 @@ body {
 
 <div class="page">
   <img src="page11.jpg">
+  <!-- ✅ IP 복사 (토스트 유지) -->
   <button class="copy-btn"
     style="left:480px; top:120px; width:150px; height:40px;"
     onclick="copyIP()">
@@ -97,8 +102,9 @@ body {
 <div id="toast">Copy</div>
 
 <script>
-function showToast() {
+function showToast(message) {
   const toast = document.getElementById("toast");
+  toast.innerText = message;
   toast.classList.add("show");
 
   setTimeout(() => {
@@ -108,12 +114,12 @@ function showToast() {
 
 function copyCode() {
   navigator.clipboard.writeText("019de11e-7a50-00a6-91e8-5e6e28070d20");
-  showToast();
+  showToast("코드 복사 완료!");
 }
 
 function copyIP() {
   navigator.clipboard.writeText("38.96.30.82:27030");
-  showToast();
+  showToast("서버 주소 복사 완료!");
 }
 </script>
 
